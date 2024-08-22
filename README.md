@@ -103,6 +103,8 @@ df['Normalisasi'] = df['Stop_Removal'].apply(normalized_term)
 ```
 
 ## Data Visualization
+![1](https://github.com/user-attachments/assets/1999f34f-27d1-4849-ac5d-c5f321b5b191)
+![2](https://github.com/user-attachments/assets/a0ffd15f-971a-4dea-8dc9-fbca5e2262b6)
 
 ## SVM Modelling
 ```python
@@ -148,6 +150,7 @@ def get_roc_curve(model, X, y):
 
 roc_svm = get_roc_curve(grid_svm.best_estimator_, X_test, y_test)
 ```
+![modelevaluation](https://github.com/user-attachments/assets/8df360ec-993a-487b-be8f-f9f33842dd94)
 
 ## Model Testing
 ```python
