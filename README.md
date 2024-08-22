@@ -114,5 +114,12 @@ df['Normalisasi'] = df['Stop_Removal'].apply(normalized_term)
 
 ## Model Testing
 ```python
+grid_svm.predict(["Karens Diner pelayannya pemarah"])
 ```
+Menghasilkan sentimen Negatif `array([0], dtype=int64)`
+
+```python
+grid_svm.predict(["Karens Diner saat ini banyak pengunjung"])
+```
+Menghasilkan sentimen Positif `array([1], dtype=int64)`
 
