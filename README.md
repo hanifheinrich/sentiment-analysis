@@ -2,7 +2,7 @@
 
 Klasifikasi dibuat untuk mendeteksi sentimen masyarakat berdasarkan dataset yang diambil dari Twitter API. Analisis sentimen ini dilakukan untuk mengukur sentimen masyarkat indonesia yang kental dengan budaya timur 'sopan santun' dengan hadirnya restoran Karens Dinner yang memiliki ciri khas Karens yakni 'Jutek dan Galak'. Sentimen analisis ini menggunakan Multilayer Perceptron dengan ekstraksi fitur TF-IDF (Term Frequency and Inverse Document Frequency) 
 
-##Crawling Data
+## Crawling Data
 Menggunakan Twitter API, saya mengumpulkan 999 tweet dengan kata kunci "Karen's Dinner" untuk analisis sentimen dan tren percakapan.
 ```python
 import tweepy 
@@ -32,7 +32,7 @@ dicsTweets = {"teks":t}
 df = pd.DataFrame(dicsTweets, columns = ["teks"])
 ```
 
-##Cleaning Data
+## Cleaning Data
 Library regex digunakan untuk membersihkan data dengan cara mendeteksi dan menghapus mention, URL, hashtag, serta karakter khusus lainnya dari teks, sehingga data menjadi lebih bersih dan siap untuk dianalisis.
 ```python
 import re
@@ -61,10 +61,10 @@ df['Tweets'] = df['Tweets'].apply(CleanTxt)
 df.drop_duplicates(subset ="Tweets", keep = 'first', inplace = True)
 ```
 
-##Labeling
+## Labeling
 Label dibuat secara manual untuk mengkategorikan sentimen dalam tweet karena pendekatan ini dipercaya lebih akurat dalam menangkap nuansa dan konteks bahasa.
 
-##Tokenization
+## Tokenization
 Tokenization diperlukan untuk memecah teks menjadi kata-kata individual, yang memungkinkan analisis sentimen yang lebih terstruktur dan akurat serta memudahkan identifikasi pola dan pengolahan data lebih lanjut.
 ```python
 def tokenization(text):
@@ -74,7 +74,7 @@ def tokenization(text):
 df['Tokenization'] = df['Tweets'].apply(lambda x:tokenization(x.lower()))
 ```
 
-##Stop Removal
+## Stop Removal
 Stop removal adalah penghapusan kata-kata yang tidak diperlukan seperti kata hubung. Kata hubung bisa mengurangi akurasi model jika diikut sertakan. Hal ini sulit mengidentifkasi sentimen dalam kata hubung.
 ```python
 stopword = nltk.corpus.stopwords.words('Indonesian')
@@ -86,7 +86,7 @@ def remove_stopwords(text):
 df['Stop_Removal'] = df['Tokenization'].apply(lambda x: remove_stopwords(x))
 ```
 
-##Normalization
+## Normalization
 Normalization merupakan proses mengubah atau memperbaiki kata yang tidak baku menjadi kata baku
 ```python
 normalizad_word = pd.read_csv('KarensDiner2.csv')
@@ -102,9 +102,9 @@ def normalized_term(document):
 df['Normalisasi'] = df['Stop_Removal'].apply(normalized_term)
 ```
 
-##Data Visualization
+## Data Visualization
 
-##SVM Modelling
+## SVM Modelling
 ```python
 ```
 
