@@ -2,6 +2,19 @@
 
 Klasifikasi dibuat untuk mendeteksi sentimen masyarakat berdasarkan dataset yang diambil dari Twitter API. Analisis sentimen ini dilakukan untuk mengukur sentimen masyarkat indonesia yang kental dengan budaya timur 'sopan santun' dengan hadirnya restoran Karens Dinner yang memiliki ciri khas Karens yakni 'Jutek dan Galak'. Sentimen analisis ini menggunakan Multilayer Perceptron dengan ekstraksi fitur TF-IDF (Term Frequency and Inverse Document Frequency) 
 
+## Table of Contents:
+
+- Crawling Data
+- Cleaning Data
+- Labeling
+- Tokenization
+- Stop Removal
+- Normalization
+- Data Visualization
+- SVM Modelling
+- Model Evaluation
+- Model Testing
+
 ## Crawling Data
 Menggunakan Twitter API, saya mengumpulkan 999 tweet dengan kata kunci "Karen's Dinner" untuk analisis sentimen dan tren percakapan.
 ```python
